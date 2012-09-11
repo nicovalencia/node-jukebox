@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+block templates
+  script#hb-folder(type="text/x-handlebars-template")
+    li.folder
+      h5 {{name}}
+
+  script#hb-file(type="text/x-handlebars-template")
+    li.file
+      a(href="{{path}}") {{name}}
+
