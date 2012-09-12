@@ -1,2 +1,5 @@
 Music/
 .DS_Store
+
+public/production/js/*
+public/production/stylesheets/*
