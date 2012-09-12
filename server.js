@@ -13,7 +13,7 @@ var app = express();
 
 app.configure(function(){
   app.set('port', 8080);
-  app.set('views', __dirname + '/app/views');
+  app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
   app.use(express.logger('dev'));
@@ -35,13 +35,21 @@ app.configure('production', function(){
  * ROUTES
  */
 
-var main = require('./app/routes/main');
-var songs = require('./app/routes/songs');
+var main = require('./routes/main');
+var songs = require('./routes/songs');
 app.get('/'        , main.index);
 app.get('/songs'   , songs.index);
 
-var music = require('./app/routes/music');
+var music = require('./routes/music');
 app.get('/Music/*' , music.stream);
+
+/**
+ * HELPERS
+ */
+
+app.locals({
+  env: app.settings.env
+});
 
 /**
  * HTTP SERVER
