@@ -1,5 +1,6 @@
 Music/
 .DS_Store
+node_modules/
 
 public/production/js/*
 public/production/stylesheets/*
