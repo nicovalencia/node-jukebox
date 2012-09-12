@@ -19,9 +19,13 @@ block nav
 block content
   #container
     #main
-      .loader
+      img.loader(src="/images/loader.gif")
 
 block templates
+  script#template-artists-item(type="text/x-handlebars-template")
+    li
+      span {{name}}
+
   script#template-folder(type="text/x-handlebars-template")
     li.folder
       h5 {{name}}

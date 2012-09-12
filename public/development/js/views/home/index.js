@@ -5,11 +5,16 @@
     el: 'body',
 
     initialize: function(options) {
-      $.when(options.artists_def).then(this.renderLibrary);
+      var _this = this;
+      $.when(options.artists_def).then(function(){ _this.render(); });
     },
 
-    renderLibrary: function() {
-      console.log(app.artists);
+    render: function() {
+      this.$el.find('.loader').fadeOut(function(){
+        new app.BB.ArtistsIndex({
+          collection: app.artists
+        }).render();
+      });
     }
 
   });
