@@ -1,15 +1,32 @@
 extends layout
 
+block header
+  header
+    h1= title
+
+block nav
+  nav
+    ul
+      li
+        a(href="#") Link 1
+      li
+        a(href="#") Link 2
+      li
+        a(href="#") Link 3
+      li
+        a(href="#") Link 4
+
 block content
-  h1= title
-  p Welcome to #{title}
+  #container
+    #main
+      .loader
 
 block templates
-  script#hb-folder(type="text/x-handlebars-template")
+  script#template-folder(type="text/x-handlebars-template")
     li.folder
       h5 {{name}}
 
-  script#hb-file(type="text/x-handlebars-template")
+  script#template-file(type="text/x-handlebars-template")
     li.file
       a(href="{{path}}") {{name}}
 

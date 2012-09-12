@@ -24,6 +24,7 @@ module.exports = function(grunt) {
           'public/development/js/collections/albums.js',
           'public/development/js/collections/artists.js',
           'public/development/js/collections/songs.js',
+          'public/development/js/views/home/index.js',
           'public/development/js/main.js'
         ],
         dest: 'public/production/js/engine.min.js'
