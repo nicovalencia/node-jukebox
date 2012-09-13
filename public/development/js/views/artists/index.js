@@ -4,6 +4,7 @@
 
     tagName: 'ul',
 
+
     initialize: function(options) {
       app.views.artists_index = this;
     },
